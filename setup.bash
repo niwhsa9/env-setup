@@ -29,12 +29,14 @@ mkdir ${HOME_DIR}/source
 cd ${HOME_DIR}/source
 git clone git@github.com:niwhsa9/dwm.git 
 cd dwm
-make install
+make all
+sudo make install
 
 # Fetch ST
 cd ..
 git clone git@github.com:niwhsa9/st.git
 cd st
+make all
 sudo make install
 
 # Fetch bar
