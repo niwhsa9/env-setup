@@ -27,25 +27,21 @@ sudo mv /usr/share/xsessions/dwm.desktop{.bak,}
 echo "Installing DWM"
 mkdir ${HOME_DIR}/source
 cd ${HOME_DIR}/source
-git clone git@github.com:niwhsa9/dwm.git 
+git clone https://github.com/niwhsa9/dwm.git
 cd dwm
 make all
 sudo make install
 
 # Fetch ST
 cd ..
-git clone git@github.com:niwhsa9/st.git
+git clone https://github.com/niwhsa9/st.git
 cd st
 make all
 sudo make install
 
 # Fetch bar
 cd ..
-git clone git@github.com:niwhsa9/rsbar.git
+git clone https://github.com/niwhsa9/rsbar.git
 cargo build
-
-# Move autostart
-
-
 
 # Neovim 
