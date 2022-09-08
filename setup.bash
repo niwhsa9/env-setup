@@ -3,7 +3,7 @@ HOME_DIR="/home/${USER}"
 
 # Install stuff I like
 echo "Installing programs"
-sudo apt-get install tmux cargo feh wget
+sudo apt-get install tmux cargo feh wget python3-pip libdbus-1-dev pkg-config
 
 # Install DWM deps
 sudo apt-get install git build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm
@@ -52,4 +52,6 @@ cd ..
 wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz
 tar -xzvf nvim-linux64.tar.gz
 sudo mv nvim-linux64 /opt/
-
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+pip3 install pyright
