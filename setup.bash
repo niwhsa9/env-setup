@@ -3,7 +3,7 @@ HOME_DIR="/home/${USER}"
 
 # Install stuff I like
 echo "Installing programs"
-sudo apt-get install tmux cargo feh wget python3-pip libdbus-1-dev pkg-config curl
+sudo apt-get install tmux cargo feh wget python3-pip libdbus-1-dev pkg-config curl fonts-font-awesome
 
 # Install DWM deps
 sudo apt-get install git build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm
@@ -15,6 +15,7 @@ cp .tmux.conf ~/
 mkdir ~/.dwm
 cp autostart.sh ~/.dwm
 cp background.jpg ~/.dwm
+cp -r nvim ~/.config/
 
 # Install dwm through apt to get login entry
 echo "setting up DWM profile"
