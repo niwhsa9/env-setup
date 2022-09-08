@@ -1,3 +1,3 @@
-/home/ashwin/.cargo/bin/rsbar &
+~/.dwm/rsbar &
 feh --bg-scale ~/.dwm/background.jpg
 

@@ -3,7 +3,7 @@ HOME_DIR="/home/${USER}"
 
 # Install stuff I like
 echo "Installing programs"
-sudo apt-get install tmux cargo feh
+sudo apt-get install tmux cargo feh wget
 
 # Install DWM deps
 sudo apt-get install git build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm
@@ -42,6 +42,14 @@ sudo make install
 # Fetch bar
 cd ..
 git clone https://github.com/niwhsa9/rsbar.git
+cd rsbar
 cargo build
+cp target/debug/rsbar ~/.dwm/
+
 
 # Neovim 
+cd ..
+wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz
+tar -xzvf nvim-linux64.tar.gz
+sudo mv nvim-linux64 /opt/
+
