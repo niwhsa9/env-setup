@@ -3,7 +3,7 @@ HOME_DIR="/home/${USER}"
 
 # Install stuff I like
 echo "Installing programs"
-sudo apt-get install tmux cargo feh wget python3-pip libdbus-1-dev pkg-config curl fonts-font-awesome
+sudo apt-get install tmux cargo feh wget python3-pip libdbus-1-dev pkg-config curl fonts-font-awesome clangd
 
 # Install DWM deps
 sudo apt-get install git build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm
