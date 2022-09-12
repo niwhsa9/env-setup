@@ -12,6 +12,8 @@ call plug#begin()
     Plug 'hrsh7th/vim-vsnip'
     Plug 'mfussenegger/nvim-dap'
     Plug 'mfussenegger/nvim-dap-python'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 call plug#end()
 
 " show existing tab with 4 spaces width
@@ -30,6 +32,13 @@ set number
 set termguicolors
 colorscheme nightfox
 
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Lua config
 lua require("lua_config")
 
 " autocmd VimEnter * NERDTree
