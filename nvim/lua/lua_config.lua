@@ -33,9 +33,11 @@ local cmp = require'cmp'
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require'lspconfig'.pyright.setup{capabilities = capabilities}
-require'lspconfig'.ccls.setup{capabilities = capabilities}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.hls.setup{}
+require'lspconfig'.clangd.setup{}
+
+require('dap-python').setup('python3 -m debugpy')
 
 
 vim.diagnostic.config({

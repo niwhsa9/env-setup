@@ -10,6 +10,8 @@ call plug#begin()
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'mfussenegger/nvim-dap-python'
 call plug#end()
 
 " show existing tab with 4 spaces width
