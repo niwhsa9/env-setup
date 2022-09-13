@@ -120,11 +120,20 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export GOPATH=${HOME}/go
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+
+
+# MY STUFF
+
+# VI keybindings in terminal
+set -o vi
+
+# ROS stuff
 source /opt/ros/noetic/setup.bash
 alias rcval="export ROS_MASTER_URI=http://10.10.10.101:11311"
-#export ROS_IP=10.10.10.171
-. "$HOME/.cargo/env"
-alias mrover_catkin=`source ~/Documents/mrover-catkin/devel/setup.bash` 
-export PATH=${PATH}:/opt/nvim-linux64/bin
+alias mrover_catkin='source ~/source/mrover/mrover-catkin/devel/setup.bash'
+alias lab='source ~/source/lab/catkin_ws/devel/setup.bash && cd ~/source/lab/catkin_ws/src/visual_servoing'
+
+# Other alias and PATH additions
+alias hls=haskell-language-server-8.10.7
+alias vim=nvim
+export PATH=${PATH}:/opt/nvim-linux64/bin:~/.local/bin/
