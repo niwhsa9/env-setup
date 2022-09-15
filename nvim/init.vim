@@ -14,6 +14,7 @@ call plug#begin()
     Plug 'mfussenegger/nvim-dap-python'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " show existing tab with 4 spaces width
