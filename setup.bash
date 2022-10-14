@@ -24,6 +24,11 @@ sudo cp /usr/share/xsessions/dwm.desktop{,.bak}
 sudo apt-get purge dwm 
 sudo mv /usr/share/xsessions/dwm.desktop{.bak,}
 
+# Install I3 gaps
+sudo add-apt-repository ppa:regolith-linux/release
+sudo apt update
+sudo apt install i3-gaps
+
 # Fetch DWM
 echo "Installing DWM"
 mkdir ${HOME_DIR}/source
