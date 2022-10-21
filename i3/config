@@ -189,17 +189,5 @@ client.focused          #992788 #5B1677 #FFFFFF #0DF4D0   #D82ED6
 
 bindsym $mod+b bar mode toggle
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        position top
-        mode hide
-        status_command i3status
-        colors {
-            background #243a73
-
-            # colorclass       <border> <background> <text>
-            focused_workspace #a5becc #a5becc #ffffff
-        }
-}
+exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
