@@ -185,9 +185,9 @@ gaps outer 10
 
 
 #client.focused          #992788 #5B1677 #FFFFFF #2E9EF4   #D82ED6
-client.focused          #992788 #5B1677 #FFFFFF #0DF4D0   #D82ED6
+client.focused          #992788 #5B1677 #FFFFFF #150BD8   #0967D8
 
-bindsym $mod+b bar mode toggle
+bindsym $mod+b exec polybar-msg cmd toggle
 
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
