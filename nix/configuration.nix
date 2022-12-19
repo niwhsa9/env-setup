@@ -1,7 +1,6 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -43,6 +42,13 @@
   services.xserver.displayManager.startx.enable = true;
   services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
+ #----=[ Fonts ]=----#
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [ 
+      ubuntu_font_family
+    ];
+  };
   
 
   # Configure keymap in X11
@@ -82,6 +88,10 @@
       feh
       st
       neovim
+      gnumake
+      gcc
+      vscode
+      clang 
     ];
   };
 
@@ -90,6 +100,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    ash-st
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
