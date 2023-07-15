@@ -40,7 +40,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
-  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+  services.xserver.windowManager.i3.package = pkgs.i3;
 
  #----=[ Fonts ]=----#
   fonts = {
@@ -76,9 +76,8 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      i3-gaps
+      i3
       dmenu
-      i3status
       git
       tmux
       polybar
