@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
+let
+  overlay = (builtins.fetchGit { 
+	url = https://github.com/niwhsa9/env-setup.git;
+	rev = "a0a3446b85b300e4eadcb73fce76d7c5aca7d4af";
 
+ });
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -40,7 +46,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
-  services.xserver.windowManager.i3.package = pkgs.i3;
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
  #----=[ Fonts ]=----#
   fonts = {
@@ -71,12 +77,21 @@
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
+  
+  # overlay
+
+  nixpkgs.overlays = [ (import overlay) ];
+
+  #nixpkgs.overlays = [ (import /home/ashwin/source/env-setup) ];
+
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ashwin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      i3
+      i3-gaps
+      i3status
       dmenu
       git
       tmux
@@ -99,7 +114,6 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    ash-st
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -132,7 +146,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
 }
 
