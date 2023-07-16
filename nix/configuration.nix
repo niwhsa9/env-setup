@@ -132,6 +132,12 @@ in
       ".config/polybar/config.ini" = {
         source = "${overlay}/polybar/config.ini";
       };
+
+      ".config/i3" = {
+        source = "${overlay}/i3";
+        recursive = true;
+      };
+
     };
 
     #services.polybar.config = 
