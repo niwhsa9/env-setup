@@ -5,14 +5,18 @@
 let
   overlay = (builtins.fetchGit { 
 	url = https://github.com/niwhsa9/env-setup.git;
-	rev = "a0a3446b85b300e4eadcb73fce76d7c5aca7d4af";
-
+	#rev = "a0a3446b85b300e4eadcb73fce76d7c5aca7d4af";
+  ref = "main";
  });
+
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./home-manager
+      (import "${home-manager}/nixos")
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -107,6 +111,31 @@ in
       vscode
       clang 
     ];
+  };
+
+  home-manager.users.ashwin = {pkgs, ...} : {
+    programs.bash.enable = true;
+    home.stateVersion = "23.05";
+
+    programs.git = {
+      enable = true;
+      userName = "Ashwin Gupta";
+      userEmail = "ashwingupta2000@gmail.com";
+      lfs.enable = true;
+    };
+
+    home.file = {
+      ".config/test" = {
+        text = "lol";
+      };
+
+      ".config/polybar/config.ini" = {
+        source = "${overlay}/polybar/config.ini";
+      };
+    };
+
+    #services.polybar.config = 
+
   };
 
   # List packages installed in system profile. To search, run:
