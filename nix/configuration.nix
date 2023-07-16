@@ -7,6 +7,7 @@ let
 	url = https://github.com/niwhsa9/env-setup.git;
 	#rev = "a0a3446b85b300e4eadcb73fce76d7c5aca7d4af";
   ref = "main";
+  rev = "d7628e69e66e130fb0d3421bf2846d1419aa8a51";
  });
 
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
