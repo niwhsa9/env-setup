@@ -13,12 +13,15 @@ let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
 in
 {
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       #./home-manager
       (import "${home-manager}/nixos")
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.efi.canTouchEfiVariables = true;
