@@ -1,0 +1,78 @@
+{
+  "nodes": {
+    "env-setup": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689565054,
+        "narHash": "sha256-/roYEvE7Y+UVNwXFArApL7UPZYqHL0FtrQjKdQpd57Q=",
+        "owner": "niwhsa9",
+        "repo": "env-setup",
+        "rev": "73175b6049a0db1aaf847bf8bd8faede1d27e202",
+        "type": "github"
+      },
+      "original": {
+        "owner": "niwhsa9",
+        "repo": "env-setup",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1689495092,
+        "narHash": "sha256-yZu2j5FpLZEPhJQQutMCPTxa1VMigLPabLYvLTq6ASM=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "2f84579a70b8c74e5ebb37299a0c3ba279f09382",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1689373857,
+        "narHash": "sha256-mtBksyvhhT98Zsm9tYHuMKuLwUKDwv+BGTl6K5nOGhY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "dfdbcc428f365071f0ca3888f6ec8c25c3792885",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1689564897,
+        "narHash": "sha256-KU457wDLxggpFJh1dbWctNBAayZ54nqr1ZkjgjL6ZPg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "dbffaf20caec7bfc9a2e64e4400c05ea7ac42e3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "env-setup": "env-setup",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
