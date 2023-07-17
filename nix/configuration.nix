@@ -4,13 +4,12 @@
 { config, pkgs, home-manager, env-setup, ... }:
 #{ config, pkgs, ...}:
 let
-  overlay = (builtins.fetchGit { 
-	url = https://github.com/niwhsa9/env-setup.git;
+  #overlay = (builtins.fetchGit { 
+  #url = https://github.com/niwhsa9/env-setup.git;
 	#rev = "a0a3446b85b300e4eadcb73fce76d7c5aca7d4af";
-  ref = "main";
+  #ref = "main";
   #rev = "d7628e69e66e130fb0d3421bf2846d1419aa8a51";
- });
-
+  #});
   #home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
 in
 {
@@ -89,7 +88,7 @@ in
   
   # overlay
 
-  nixpkgs.overlays = [ (import overlay) ];
+  nixpkgs.overlays = [ (import env-setup) ];
 
   #nixpkgs.overlays = [ (import /home/ashwin/source/env-setup) ];
 
@@ -135,11 +134,11 @@ in
       };
 
       ".config/polybar/config.ini" = {
-        source = "${overlay}/polybar/config.ini";
+        source = "${env-setup}/polybar/config.ini";
       };
 
       ".config/i3" = {
-        source = "${overlay}/i3";
+        source = "${env-setup}/i3";
         recursive = true;
       };
 
