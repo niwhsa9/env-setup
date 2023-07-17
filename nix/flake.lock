@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "env-setup": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1689565833,
-        "narHash": "sha256-ug43FlnNsIHgXH4ow8otAvEwEY8d5B4quA8xv8neSoo=",
-        "owner": "niwhsa9",
-        "repo": "env-setup",
-        "rev": "06a14817dca2ec51d328eadc5bcfdbc0d291bbc2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "niwhsa9",
-        "repo": "env-setup",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -67,7 +51,6 @@
     },
     "root": {
       "inputs": {
-        "env-setup": "env-setup",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2"
       }

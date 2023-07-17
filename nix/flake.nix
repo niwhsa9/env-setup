@@ -2,8 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
     home-manager.url = github:nix-community/home-manager;
-    env-setup.url = "github:niwhsa9/env-setup";
-    env-setup.flake = false;
   };
 
   outputs = { self, nixpkgs, ... } @ attrs : {
