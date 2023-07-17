@@ -3,11 +3,11 @@
     "env-setup": {
       "flake": false,
       "locked": {
-        "lastModified": 1689565054,
-        "narHash": "sha256-/roYEvE7Y+UVNwXFArApL7UPZYqHL0FtrQjKdQpd57Q=",
+        "lastModified": 1689565833,
+        "narHash": "sha256-ug43FlnNsIHgXH4ow8otAvEwEY8d5B4quA8xv8neSoo=",
         "owner": "niwhsa9",
         "repo": "env-setup",
-        "rev": "73175b6049a0db1aaf847bf8bd8faede1d27e202",
+        "rev": "06a14817dca2ec51d328eadc5bcfdbc0d291bbc2",
         "type": "github"
       },
       "original": {
@@ -52,11 +52,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1689564897,
-        "narHash": "sha256-KU457wDLxggpFJh1dbWctNBAayZ54nqr1ZkjgjL6ZPg=",
+        "lastModified": 1689567674,
+        "narHash": "sha256-KH+QldKKas7PsUXwlZftDfWuonHz8fwGcT4b7ygYk/8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "dbffaf20caec7bfc9a2e64e4400c05ea7ac42e3c",
+        "rev": "a8eaa43a38cd5e2e21268c5887da91a7cfc40637",
         "type": "github"
       },
       "original": {
