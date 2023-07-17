@@ -131,11 +131,11 @@ in
       };
 
       ".config/polybar/config.ini" = {
-        source = "../polybar/config.ini";
+        source = ../polybar/config.ini;
       };
 
       ".config/i3" = {
-        source = "../i3";
+        source = ../i3;
         recursive = true;
       };
 
