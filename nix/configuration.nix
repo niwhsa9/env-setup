@@ -1,13 +1,14 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, ... }:
+{ config, pkgs, home-manager, env-setup, ... }:
+#{ config, pkgs, ...}:
 let
   overlay = (builtins.fetchGit { 
 	url = https://github.com/niwhsa9/env-setup.git;
 	#rev = "a0a3446b85b300e4eadcb73fce76d7c5aca7d4af";
   ref = "main";
-  rev = "d7628e69e66e130fb0d3421bf2846d1419aa8a51";
+  #rev = "d7628e69e66e130fb0d3421bf2846d1419aa8a51";
  });
 
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
@@ -31,7 +32,7 @@ in
   boot.loader.grub.devices = ["nodev"];
 
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "ashwin-desktop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -167,6 +168,7 @@ in
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
