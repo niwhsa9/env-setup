@@ -7,5 +7,5 @@ self : super:
             });
     });
     
-    
+   manif = super.callPackage ./pkgs/manif/default.nix {}; 
 }  
