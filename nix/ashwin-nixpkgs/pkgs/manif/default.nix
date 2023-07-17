@@ -1,19 +1,19 @@
 { lib
 , stdenv
-, fetchGit
 , cmake
+, eigen
 }:
 
 stdenv.mkDerivation rec {
-  pname = "eigen";
-  version = "3.4.0";
+  pname = "manif";
+  version = "1.0.0";
 
   src = builtins.fetchGit {
     url = https://github.com/artivis/manif.git;
     rev = "64f6e0c7528c62f9e3027ebcee86bf871aacc796";
   };
 
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake eigen ];
 
   meta = with lib; {
     homepage = "https://artivis.github.io/manif/";
