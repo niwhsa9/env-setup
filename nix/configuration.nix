@@ -92,8 +92,9 @@ in
   nix.nixPath =
     # Prepend default nixPath values.
     options.nix.nixPath.default ++
+    [ "nixpkgs-overlays=${./overlays.nix}" ]
+
     # Append our nixpkgs-overlays.
-    [ "nixpkgs-overlays=${./ashwin-nixpkgs/default.nix}" ]
   ;
 
 

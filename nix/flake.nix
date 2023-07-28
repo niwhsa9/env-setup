@@ -10,5 +10,8 @@
       specialArgs = attrs;
       modules = [ ./configuration.nix ];
     };
+
+    overlays.default = import ./ashwin-nixpkgs/default.nix;
+
   };
 }
