@@ -1,4 +1,5 @@
-self : super:
+[
+(self : super:
 {
     st = super.st.overrideAttrs ( old : rec {
          src =( builtins.fetchGit { 
@@ -8,4 +9,5 @@ self : super:
     });
     
    manif = super.callPackage ./pkgs/manif/default.nix {}; 
-}  
+})  
+]

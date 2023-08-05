@@ -87,12 +87,12 @@ in
 
   
   # overlay
-  nixpkgs.overlays = [ (import ./ashwin-nixpkgs/default.nix) ];
+  nixpkgs.overlays = (import ./ashwin-nixpkgs/default.nix);
 
   nix.nixPath =
     # Prepend default nixPath values.
     options.nix.nixPath.default ++
-    [ "nixpkgs-overlays=${./overlays.nix}" ]
+    [ "nixpkgs-overlays=/home/ashwin/source/env-setup/nix/ashwin-nixpkgs/default.nix" ]
 
     # Append our nixpkgs-overlays.
   ;
