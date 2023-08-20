@@ -118,6 +118,7 @@ in
       vscode
       clang 
       cargo
+      rustc
     ];
   };
 
