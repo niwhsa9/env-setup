@@ -1,10 +1,6 @@
-- name: My first play
+- name: System install
   hosts: all
   tasks:
-   - name: Print message
-     ansible.builtin.debug:
-      msg: Starting playbook
-
    - name: Installing system packages
      become: True
      ansible.builtin.apt:
@@ -12,10 +8,10 @@
         - vim
         - curl
         - tmux
-        - i3
         - suckless-tools
         - cmake
         - g++
+
 
    - name: Copy i3 dotfiles
      copy: 
