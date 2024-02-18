@@ -13,6 +13,46 @@
         - g++
 
 
+   - name: i3 build deps
+     become: True
+     ansible.builtin.apt:
+       name:
+        - libxcb1-dev 
+        - libxcb-keysyms1-dev 
+        - libpango1.0-dev
+        - libxcb-util0-dev 
+        - libxcb-icccm4-dev 
+        - libyajl-dev
+        - libstartup-notification0-dev 
+        - libxcb-randr0-dev
+        - libev-dev 
+        - libxcb-cursor-dev 
+        - libxcb-xinerama0-dev
+        - libxcb-xkb-dev 
+        - libxkbcommon-dev 
+        - libxkbcommon-x11-dev
+        - autoconf 
+        - libxcb-xrm0 
+        - libxcb-xrm-dev 
+        - automake 
+        - libxcb-shape0-dev
+        - meson
+   - name: Clone i3
+     ansible.builtin.git:
+       repo: https://github.com/i3/i3.git
+       dest: ~/sources/i3
+   - name: i3 build setup
+     ansible.builtin.file:
+       path: ~/sources/i3/build
+       state: directory
+   - name: Install i3
+     ansible.builtin.shell: | 
+       cd build
+       meson ..
+       sudo ninja install
+     args:
+       chdir: ~/sources/i3 
+
    - name: Copy i3 dotfiles
      copy: 
       src: ../dotfiles/i3
