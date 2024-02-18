@@ -11,6 +11,7 @@
         - suckless-tools
         - cmake
         - g++
+        - feh
 
 
    - name: i3 build deps
@@ -106,3 +107,18 @@
        sudo make install
      args:
        chdir: ~/sources/polybar 
+
+
+   - name: Clone st
+     ansible.builtin.git:
+       repo: https://github.com/niwhsa9/st.git
+       dest: ~/sources/st
+   - name: St build setup
+     ansible.builtin.file:
+       path: ~/sources/st/build
+       state: directory
+   - name: Install st
+     ansible.builtin.shell: | 
+       sudo make install
+     args:
+       chdir: ~/sources/st 
