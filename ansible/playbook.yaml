@@ -1,0 +1,72 @@
+- name: My first play
+  hosts: all
+  tasks:
+   - name: Print message
+     ansible.builtin.debug:
+      msg: Starting playbook
+
+   - name: Installing system packages
+     become: True
+     ansible.builtin.apt:
+      name:
+        - vim
+        - curl
+        - tmux
+        - i3
+        - suckless-tools
+        - cmake
+        - g++
+
+   - name: Copy i3 dotfiles
+     copy: 
+      src: ../dotfiles/i3
+      dest: ~/.config/
+
+   - name: Copy polybar dotfiles
+     copy: 
+      src: ../dotfiles/polybar
+      dest: ~/.config/
+   - name: Copy tmux dotfiles
+     copy: 
+      src: ../dotfiles/.tmux.conf
+      dest: ~/
+   
+   - name: Polybar build deps
+     become: True
+     ansible.builtin.apt:
+       name:
+        - build-essential 
+        - cmake-data 
+        - pkg-config 
+        - python3-sphinx 
+        - python3-packaging 
+        - libuv1-dev 
+        - libcairo2-dev 
+        - libxcb1-dev 
+        - libxcb-util0-dev 
+        - libxcb-randr0-dev 
+        - libxcb-composite0-dev 
+        - python3-xcbgen 
+        - xcb-proto 
+        - libxcb-image0-dev 
+        - libxcb-ewmh-dev 
+        - libxcb-icccm4-dev
+        - libjsoncpp-dev
+
+
+   - name: Clone polybar
+     ansible.builtin.git:
+       repo: https://github.com/polybar/polybar  
+       dest: ~/sources/polybar
+   - name: Polybar build setup
+     ansible.builtin.file:
+       path: ~/sources/polybar/build
+       state: directory
+   - name: Install polybar
+     ansible.builtin.shell: | 
+       cd build
+       cmake ..
+       make -j4
+       sudo make install
+     args:
+       chdir: ~/sources/polybar 
