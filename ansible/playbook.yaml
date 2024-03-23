@@ -12,6 +12,7 @@
         - cmake
         - g++
         - feh
+        - flameshot
 
 
    - name: i3 build deps
