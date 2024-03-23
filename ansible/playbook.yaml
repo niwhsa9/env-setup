@@ -59,6 +59,11 @@
       src: ../dotfiles/i3
       dest: ~/.config/
 
+   - name: Make polybar script executable
+     file:
+        path: ~/.config/i3/polybar.sh
+        mode: 0755
+
    - name: Copy polybar dotfiles
      copy: 
       src: ../dotfiles/polybar
