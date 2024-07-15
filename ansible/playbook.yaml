@@ -122,3 +122,24 @@
        sudo make install
      args:
        chdir: ~/sources/st 
+
+   - name: Copy neovim dotfiles
+     copy: 
+      src: ../dotfiles/nvim
+      dest: ~/.config/
+   - name: download and untar nvim
+     ansible.builtin.unarchive:
+      src: https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
+      dest: ~/Downloads
+      remote_src: yes
+        #- name: Copy neovim install to /opt
+        #  copy: 
+        #   src: ~/Downloads/nvim-linux64
+        #   dest: /opt
+        #  become: true
+   - name: Create a symbolic link
+     ansible.builtin.file:
+      src: /opt/nvim-linux64/bin/nvim
+      dest: /usr/bin/nvim
+      state: link 
+     become: true
